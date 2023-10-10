@@ -35,5 +35,65 @@ int main(int argc, char** argv) {
     cout << endl;
     //6
     testIsSquare("points.txt");
+//    // 7. 8. 11.
+//   srand(time(NULL));
+//
+//    int numPoints;
+//    cout<<"Enter the number of points: ";
+//    cin>>numPoints;
+//
+//    Point * points = createArray(numPoints);
+//
+//    for (int j = 0; j < numPoints; j++) {
+//        points[j] = Point(rand() % 2001, rand() % 2001);
+//    }
+//
+//    cout << "Before sorting:" << endl;
+//    printArray(points, numPoints);
+//
+//    cout << "After sorting:" << endl;
+//    sortPoints(points, numPoints);
+//    printArray(points, numPoints);
+
+     //9. 10.
+    int numPoints = 10;
+    Point *points = createArray(numPoints);
+
+    srand(time(NULL));
+
+    for (int j = 0; j < numPoints; j++) {
+        points[j] = Point(rand() % 100, rand() % 100);
+    }
+
+    pair<Point, Point> closest = closestPoints(points, numPoints);
+
+    cout << "Closest points: (" << closest.first.getX() << ", " << closest.first.getY() << ") and ("
+         << closest.second.getX() << ", " << closest.second.getY() << ")" << endl;
+
+    pair<Point, Point> farthest = farthestPoints(points, numPoints);
+
+    cout << "Farthest points: (" << farthest.first.getX() << ", " << farthest.first.getY() << ") and ("
+         << farthest.second.getX() << ", " << farthest.second.getY() << ")" << endl;
+
+    deletePoints(points);
+
+//     //12.
+//    int numPoints = 20;
+//    Point* points = new Point[numPoints];
+//
+//    // Initialize points with some values
+//    for (int i = 0; i < numPoints; ++i) {
+//        points[i] = Point(rand() % 100, rand() % 100);
+//    }
+//
+//    Point* farthest = farthestPointsFromOrigin(points, numPoints);
+//
+//    cout << "The 10 farthest points from the origin are:" << endl;
+//    for (int i = 0; i < 10; ++i) {
+//        cout << "(" << farthest[i].getX() << ", " << farthest[i].getY() << ")" << endl;
+//    }
+//
+//    deletePoints(points);
+//    deletePoints(farthest);
     return 0;
 }
