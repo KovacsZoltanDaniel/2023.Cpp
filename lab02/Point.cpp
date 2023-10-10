@@ -39,16 +39,7 @@ double distance(const Point &a, const Point &b) {
 }
 
 bool isSquare(const Point &a, const Point &b, const Point &c, const Point &d) {
-    double D[6] = {
-            distance(a, b),
-            distance(a, c),
-            distance(a, d),
-            distance(b, c),
-            distance(b, d),
-            distance(d, c),
-    };
-    sort(D, D + 6);
-    return (D[0] == D[3] && D[4] == D[5] && D[3] < D[4]);
+    return distance(a,b) == distance(c,d) && distance(a,c) == distance(b,d);
 }
 
 void testIsSquare(const char *filename) {
@@ -82,7 +73,5 @@ void testIsSquare(const char *filename) {
             cout << "p3: (" << p3.getX() << " " << p3.getY() << ")" << endl;
             cout << "p4: (" << p4.getX() << " " << p4.getY() << ")" << endl;
         }
-
-
     }
 }
