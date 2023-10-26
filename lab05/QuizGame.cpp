@@ -22,8 +22,10 @@ void QuizGame::startGame() {
     }
     auto first = order.begin();
     auto last = order.back();
-    for (auto i = (last - first) - 1; i > 0; --i)
+    for (auto i = (last - first) - 1; i > 0; --i){
         swap(first[i], first[dist(mt)]);
+    }
+
 
     for (int i = 0; i < order.size(); ++i) {
         cout << i << "->" << order[i] << endl;
