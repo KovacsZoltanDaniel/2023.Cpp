@@ -15,3 +15,7 @@ void Alkalmazott::print(ostream &os)const {
 int Alkalmazott::getId() const {
     return id;
 }
+
+const string &Alkalmazott::getMunkakor() const {
+    return munkakor;
+}

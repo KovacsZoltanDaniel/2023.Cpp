@@ -18,10 +18,16 @@ Manager::Manager(const string &vezetekNev, const string &keresztNev, int szulete
 }
 
 void Manager::print(ostream &os) const{
-    os << "Manager " << id << " " << vezetekNev << " " << keresztNev << " " << szuletesiEv << " " << munkakor << " beosztottjai : " << endl;
-    for (auto b:beosztottak){
-        b->print(os);
+    if(beosztottak.size() == 0){
+        os << "Manager " << id << " " << vezetekNev << " " << keresztNev << " " << szuletesiEv << " " << munkakor << endl;
     }
+    else{
+        os << "Manager " << id << " " << vezetekNev << " " << keresztNev << " " << szuletesiEv << " " << munkakor << " beosztottjai : " << endl;
+        for (auto b:beosztottak){
+            b->print(os);
+        }
+    }
+
 //    for_each(beosztottak.begin(), beosztottak.end(), [&os](Alkalmazott *beosztott) {
 //        beosztott->print(os);
 //    });

@@ -19,6 +19,8 @@ public:
     Alkalmazott(const string &vezetekNev, const string &keresztNev, int szuletesiEv, const string &munkakor);
     virtual void print(ostream &os)const override;
 
+    const string &getMunkakor() const;
+
 };
 
 
