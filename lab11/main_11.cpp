@@ -6,17 +6,6 @@
 #include <vector>
 
 int main() {
-    /*
-    Student student(1, "Saul", "Goodman");
-    student.addGrade("maths", 10);
-    student.addGrade("romanian", 7.5);
-    student.addGrade("hungarian", 8);
-    cout << "Saul Goodman's math grade: " << student.getGrade("maths");
-    cout << endl;
-    student.computeAverage();
-    cout << student << endl;
-*/
-
     vector<string> subjects = {"math", "romanian", "hungarian"};
     const int numSubjects = subjects.size();
 
